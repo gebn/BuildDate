@@ -7,6 +7,12 @@ This is a simple, fast program for retrieving the build date of a .NET assembly 
 	$ ./builddate FILE
 	Build date: 2013-11-16 15:32:29 UTC
 
+## Options
+
+Option | Description
+:--- |:---
+`--help`, `/h` | Show program version, usage and options
+
 ## Compilation
 
 ### GCC

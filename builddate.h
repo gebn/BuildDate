@@ -8,6 +8,12 @@
 	#include <inttypes.h>
 #endif
 
+/* BuildDate release */
+extern const char version_string[];
+
+/* print the documentation */
+static void print_help();
+
 /* retrieve the timestamp of a linked dll */
 static time_t get_linker_timestamp(FILE *file);
 

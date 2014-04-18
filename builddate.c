@@ -1,9 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
-#include <time.h>
 #include <stdint.h>
+#include <string.h>
+#include <time.h>
 #include "builddate.h"
+
+const char version_string[] = "0.1";
 
 int main(int argc, char *argv[])
 {
@@ -13,6 +16,11 @@ int main(int argc, char *argv[])
 
 	if (argc < 2) {
 		fatal("No file provided.");
+	}
+
+	if (strcmp(argv[1], "--help") == 0 || strcmp(argv[1], "/h") == 0) {
+		print_help();
+		return EXIT_SUCCESS;
 	}
 
 	file = fopen(argv[1], "r");
@@ -31,6 +39,17 @@ int main(int argc, char *argv[])
 	free(formatted);
 
 	return EXIT_SUCCESS;
+}
+
+static void print_help()
+{
+	printf("BuildDate %s\n", version_string);
+	printf("Retrieve the build date of a .NET assembly.\n");
+	printf("Available at https://github.com/gebn/BuildDate\n");
+	printf("Copyright (c) 2014 George Brighton\n\n");
+	printf("Usage: builddate FILE\n\n");
+	printf("Options:\n");
+	printf("  --help	Display this help\n\n");
 }
 
 static time_t get_linker_timestamp(FILE *file)
