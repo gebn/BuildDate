@@ -17,10 +17,10 @@ Option | Description
 
 ### GCC
 
-	$ gcc builddate.c -Wall -Wextra -Werror -std=c99 -pedantic -O3 -o builddate
+	$ gcc -Wall -Wextra -Werror -std=c99 -pedantic -O3 -o builddate builddate.c
 
 ### MSVC
 
 MSVC doesn't seem to have its own copy of the fixed size integer types, so the included `inttypes.h` must be present.
 
-	>cl builddate.c
+	>cl /O2 builddate.c
