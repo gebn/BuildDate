@@ -11,7 +11,7 @@ This is a simple, fast program for retrieving the build date of a .NET assembly 
 
 Option | Description
 :--- |:---
-`--help`, `/h` | Show program version, usage and options
+`--help` | Show program version, usage and options
 
 ## Compilation
 
