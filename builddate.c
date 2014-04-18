@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 
 	file = fopen(argv[1], "r");
 	if (!file) {
-		fatal("Failed to open file.");
+		fatal("Failed to open file '%s'.", argv[1]);
 	}
 
 	timestamp = get_linker_timestamp(file);
