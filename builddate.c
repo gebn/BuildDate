@@ -14,11 +14,7 @@ int main(int argc, char *argv[])
 	time_t timestamp; /* the build date of the above file */
 	char *formatted; /* the formatted build date */
 
-	if (argc < 2) {
-		fatal("No file provided.");
-	}
-
-	if (strcmp(argv[1], "--help") == 0) {
+	if (argc < 2 || strcmp(argv[1], "--help") == 0) {
 		print_help();
 		return EXIT_SUCCESS;
 	}
