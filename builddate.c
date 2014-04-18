@@ -67,10 +67,10 @@ static inline int32_t get_int32_t(const unsigned char *bytes)
 
 static char *format_build_date(const struct tm *time)
 {
-	const size_t length = 26;
+	const size_t length = 24;
 
 	char *buffer = malloc(length * sizeof(char));
-	strftime(buffer, length, "%Y-%m-%d %H:%M:%S %z", time);
+	strftime(buffer, length, "%Y-%m-%d %H:%M:%S UTC", time);
 	return buffer;
 }
 
