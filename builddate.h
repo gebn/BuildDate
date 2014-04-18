@@ -12,10 +12,10 @@
 static time_t get_linker_timestamp(FILE *file);
 
 /* read n bytes from a file into bytes */
-static inline void read_bytes(FILE *file, const size_t n, unsigned char *bytes);
+static void read_bytes(FILE *file, const size_t n, unsigned char *bytes);
 
 /* turn an array of 4 bytes into its 32-bit signed integer equivalent */
-static int32_t get_int32_t(const unsigned char *bytes);
+static inline int32_t get_int32_t(const unsigned char *bytes);
 
 /* format a time into a human-readable string */
 static char *format_build_date(const struct tm *time);

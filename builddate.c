@@ -53,7 +53,7 @@ static time_t get_linker_timestamp(FILE *file)
 	return (time_t)get_int32_t(bytes);
 }
 
-static inline void read_bytes(FILE *file, const size_t n, unsigned char *bytes)
+static void read_bytes(FILE *file, const size_t n, unsigned char *bytes)
 {
 	if (!fread(bytes, n, 1, file)) {
 		fatal("Error reading from file.");
