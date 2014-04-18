@@ -9,7 +9,7 @@
 #endif
 
 /* retrieve the timestamp of a linked dll */
-static time_t get_linker_timestamp(FILE *f);
+static time_t get_linker_timestamp(FILE *file);
 
 /* read n bytes from a file into bytes */
 static inline void read_bytes(FILE *file, const size_t n, unsigned char *bytes);
@@ -18,7 +18,7 @@ static inline void read_bytes(FILE *file, const size_t n, unsigned char *bytes);
 static int32_t get_int32_t(const unsigned char *bytes);
 
 /* format a time into a human-readable string */
-static char *format_build_date(const struct tm *tm);
+static char *format_build_date(const struct tm *time);
 
 /* print an error to stderr and exit */
 static void fatal(const char *format, ...);
