@@ -1,10 +1,10 @@
 # BuildDate
 
-This is a simple, fast program for retrieving the build date of a .NET assembly using its PE header.
+BuildDate is a simple, lightweight program for retrieving the build date of a .NET assembly using its PE header.
 
 ## Usage
 
-	$ ./builddate FILE
+	$ ./builddate lib.dll
 	Build date: 2013-11-16 15:32:29 UTC
 
 ## Options
