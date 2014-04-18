@@ -3,7 +3,7 @@
 #include <stdarg.h>
 #include <time.h>
 #include <stdint.h>
-#include "getbuild.h"
+#include "builddate.h"
 
 int main(int argc, char *argv[])
 {
