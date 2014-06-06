@@ -17,6 +17,9 @@ static void print_help();
 /* retrieve the timestamp of a linked dll */
 static time_t get_linker_timestamp(FILE *file);
 
+/* seek relative to the beginning of a file, with error checking */
+static void file_seek(FILE *file, const long int offset);
+
 /* read n bytes from a file into bytes */
 static void read_bytes(FILE *file, const size_t n, unsigned char *bytes);
 

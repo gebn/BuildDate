@@ -59,13 +59,20 @@ static time_t get_linker_timestamp(FILE *file)
 		return -1;
 	}
 
-	fseek(file, peOffset, SEEK_SET);
+	file_seek(file, peOffset);
 	read_bytes(file, 4, bytes); /* read 4 bytes - a 32 bit int */
 
-	fseek(file, get_int32_t(bytes) + linkerTimestampOffset, SEEK_SET);
+	file_seek(file, get_int32_t(bytes) + linkerTimestampOffset);
 	read_bytes(file, 4, bytes);
 
 	return (time_t)get_int32_t(bytes);
+}
+
+static void file_seek(FILE *file, const long int offset)
+{
+	if(fseek(file, offset, SEEK_SET) != 0) {
+		fatal("File seek error.");
+	}
 }
 
 static void read_bytes(FILE *file, const size_t n, unsigned char *bytes)
