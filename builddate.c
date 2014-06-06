@@ -22,14 +22,11 @@ int main(int argc, char *argv[])
 
 	file = fopen(argv[1], "r");
 	if (!file) {
-		fatal("Failed to open file '%s'.", argv[1]);
+		fatal("Couldn't open file '%s'.", argv[1]);
 	}
 
 	timestamp = get_linker_timestamp(file);
 	fclose(file);
-	if (timestamp == -1) {
-		fatal("Failed to read linker timestamp.");
-	}
 
 	utc = gmtime(&timestamp);
 	if (utc == NULL) {
@@ -76,7 +73,7 @@ static time_t get_linker_timestamp(FILE *file)
 
 static void file_seek(FILE *file, const long int offset)
 {
-	if(fseek(file, offset, SEEK_SET) != 0) {
+	if (fseek(file, offset, SEEK_SET) != 0) {
 		fatal("File seek error.");
 	}
 }
