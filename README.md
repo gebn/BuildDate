@@ -2,6 +2,10 @@
 
 BuildDate is a simple, lightweight program for retrieving the build date of a .NET assembly using its PE header.
 
+<a href="https://scan.coverity.com/projects/2107">
+	<img alt="Coverity Scan Build Status" src="https://scan.coverity.com/projects/2107/badge.svg" />
+</a>
+
 ## Usage
 
 	$ ./builddate lib.dll
