@@ -9,7 +9,7 @@
 #endif
 
 /* BuildDate release */
-extern const char version_string[];
+extern const char *version_string;
 
 /* print the documentation */
 static void print_help();

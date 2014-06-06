@@ -6,7 +6,7 @@
 #include <time.h>
 #include "builddate.h"
 
-const char version_string[] = "0.1";
+const char *version_string = "0.1";
 
 int main(int argc, char *argv[])
 {
