@@ -25,10 +25,10 @@ int main(int argc, char *argv[])
 	}
 
 	timestamp = get_linker_timestamp(file);
+	fclose(file);
 	if (timestamp == -1) {
 		fatal("Failed to read linker timestamp.");
 	}
-	fclose(file);
 
 	formatted = format_build_date(gmtime(&timestamp));
 	printf("Build date: %s\n", formatted);
