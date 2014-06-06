@@ -12,6 +12,7 @@ int main(int argc, char *argv[])
 {
 	FILE *file; /* the dll to examine */
 	time_t timestamp; /* the build date of the above file */
+	struct tm *utc; /* the timestamp as a tm struct in UTC */
 	char *formatted; /* the formatted build date */
 
 	if (argc < 2 || strcmp(argv[1], "--help") == 0) {
@@ -30,7 +31,12 @@ int main(int argc, char *argv[])
 		fatal("Failed to read linker timestamp.");
 	}
 
-	formatted = format_build_date(gmtime(&timestamp));
+	utc = gmtime(&timestamp);
+	if (utc == NULL) {
+		fatal("Failed to identify a timestamp.");
+	}
+
+	formatted = format_build_date(utc);
 	printf("Build date: %s\n", formatted);
 	free(formatted);
 
