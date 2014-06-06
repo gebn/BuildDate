@@ -77,7 +77,7 @@ static void file_seek(FILE *file, const long int offset)
 
 static void read_bytes(FILE *file, const size_t n, unsigned char *bytes)
 {
-	if (!fread(bytes, n, 1, file)) {
+	if (fread(bytes, n, 1, file) != 1) {
 		fatal("Error reading from file.");
 	}
 }
