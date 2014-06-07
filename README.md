@@ -19,6 +19,8 @@ Option | Description
 
 ## Compilation
 
+N.B. You can also use Make to build BuildDate.
+
 ### GCC
 
 	$ gcc -Wall -Wextra -Werror -std=c99 -pedantic -O3 -o builddate builddate.c
