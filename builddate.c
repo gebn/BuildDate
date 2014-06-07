@@ -46,7 +46,7 @@ static void print_help()
 	printf("Retrieve the build date of a .NET assembly.\n");
 	printf("Available at https://github.com/gebn/BuildDate\n");
 	printf("Copyright (c) 2014 George Brighton\n\n");
-	printf("Usage: builddate FILE\n\n");
+	printf("Usage: builddate lib.dll\n\n");
 	printf("Options:\n");
 	printf("  --help	Display this help\n\n");
 }
