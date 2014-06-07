@@ -95,6 +95,9 @@ static char *format_build_date(const struct tm *time)
 	const size_t length = 24;
 
 	char *buffer = malloc(length * sizeof(char));
+	if (buffer == NULL) {
+		fatal("Error allocating memory for formatted time string.");
+	}
 	strftime(buffer, length, "%Y-%m-%d %H:%M:%S UTC", time);
 	return buffer;
 }
